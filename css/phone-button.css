@@ -1,0 +1,26 @@
+.phoneButtons {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #cfedff);
+  background-image: -moz-linear-gradient(top, #ffffff, #cfedff);
+  background-image: -ms-linear-gradient(top, #ffffff, #cfedff);
+  background-image: -o-linear-gradient(top, #ffffff, #cfedff);
+  background-image: linear-gradient(to bottom, #ffffff, #cfedff);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.phoneButtons:hover {
+  background: #daebf5;
+  background-image: -webkit-linear-gradient(top, #daebf5, #94bbd6);
+  background-image: -moz-linear-gradient(top, #daebf5, #94bbd6);
+  background-image: -ms-linear-gradient(top, #daebf5, #94bbd6);
+  background-image: -o-linear-gradient(top, #daebf5, #94bbd6);
+  background-image: linear-gradient(to bottom, #daebf5, #94bbd6);
+  text-decoration: none;
+}

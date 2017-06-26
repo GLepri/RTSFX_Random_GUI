@@ -1,0 +1,216 @@
+* {
+margin:0;
+padding:0;
+}
+
+body {
+    background: #fff;
+    padding-bottom: 500px;
+    font-family:Helvetica, Arial, sans-serif;
+}
+
+.form{
+  display: none;
+}
+
+.effect1{
+width:33.3%;  
+float: left;
+}
+
+.effect2{
+width:33.3%;  
+float:left;
+
+}
+
+.effect3{
+width:33.3%;  
+float:left;
+
+}
+
+.navbar {
+    margin-top: 15px;
+}
+
+
+h1{
+font-size: 4.5em;
+font-weight: bold;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+h2{
+font-size: 2.5em;
+font-weight: bold;
+letter-spacing: 0px;
+}
+h3{
+font-size: 2em;
+font-weight: bold;
+letter-spacing: 0px;
+}
+h4{
+font-size: 1.5em;
+font-weight: bold;
+letter-spacing: 0px;
+}
+h5{
+font-size: 1em;
+font-weight: bold;
+letter-spacing: 0px;
+}
+h6{
+font-size: 0.5em;
+font-weight: bold;
+letter-spacing: 0px;
+}
+
+.header-text{
+  color: #F8F8FF;
+  font-size: 45px;
+
+}
+
+
+.header-text-t2{
+  color: #F8F8FF;
+  font-size: 20px;
+
+}
+
+.cliente {
+  padding: 20px;
+  background: white;
+	margin-top:10px;
+	border: #cdcdcd medium solid;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+
+/*** Panel  ***/
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+.panel{
+border: 0;
+border-color: transparent;
+background:#DDDDDD;}
+.panel.with-nav-tabs .panel-heading{
+    padding: 5px 5px 0 5px;
+}
+.panel.with-nav-tabs .nav-tabs{
+	border-bottom: none;
+}
+.panel.with-nav-tabs .nav-justified{
+	margin-bottom: -1px;
+}
+/********************************************************************/
+/*** PANEL PRIMARY ***/
+.with-nav-tabs.panel-primary .nav-tabs > li > a,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+    color: #ffffff;
+}
+.with-nav-tabs.panel-primary .nav-tabs > .open > a,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+	color: #000000;
+	background-color: #DDDDDD;
+	border-color: transparent;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+	color: #333;
+	background-color: #DDDDDD;
+	border-color: #428bca;
+	border-bottom-color: transparent;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #428bca;
+    border-color: #3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #fff;   
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #3071a9;
+}
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    background-color: #4a9fe9;
+}
+/********************************************************************/
+
+
+
+
+.top-container h1 {
+	font-size: 28px;
+}
+
+.top-container h2 {
+	font-size: 14px;
+	font-weight: 100;
+	opacity: 0.6;
+}
+
+#freqResponseCanvas {
+	border: 2px #fff;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+#dbLabelCanvas {
+	border: 2px #fff;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+#freqLabelCanvas {
+	border: 2px #fff;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+input:disabled {
+  opacity: 0.1;
+}
+
+.left, .right
+{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+span {
+  display: inline-block;
+  width: 200px;
+}
+
+
+
+/********************************************************************/
+
+  
+  .btn button {
+  float:left;
+ }
+ 
+ #recStatus {
+ 	display: none;
+ }

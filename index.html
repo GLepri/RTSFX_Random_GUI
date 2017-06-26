@@ -1,0 +1,241 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <!--  Import jquery-->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!--  Import custom JS file-->
+    <script src="js/index.js" type="text/javascript"></script>
+    <!--  Import utilties -->
+    <script src="js/utilities.js" type="text/javascript"></script>
+
+    <!--  Import NexusUI JS file-->
+    <!-- <script src="js/nexusUI.js"></script> -->
+    <!--Import Utility file -->
+
+    <script type="text/javascript" scr="js/utilities.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets Import -->
+    <link rel="stylesheet" type="text/css" href="css/button.css">
+    <link rel="stylesheet" type="text/css" href="css/checkbox.css">
+    <link rel="stylesheet" type="text/css" href="css/range.css">
+    <link rel="stylesheet" type="text/css" href="css/sidenav.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/select.css">
+
+    <title>GUI Randomise Example</title>
+  </head>
+
+  <body>
+    <div class="container" style="background:#333;">
+      <header style="padding-bottom: 20px; border-radius: 100px;" class="col-md-10 col-md-offset-1">
+        <br>
+        <h1 class="header-text" style="text-align:center;">Real Time Sound Effect Synthesis</h1>
+        <br>
+        <h5 class="header-text-t2" style="text-align:center;">Developed in Chrome and may not work in other browsers</h6>
+      </header>
+    </div>
+    <div class="container" style="background:#dddddd; padding-bottom: 50px; padding-top: 20px;">
+      <h2 style="text-align:center;">GUI Randomise Example</h2>
+        <div id="loading" align="center">LOADING ...</div>
+        <div id="startButtonDiv" align="center">
+          <button class="btn" id="startButton" align="center">Start</button>
+        </div>
+        <br>
+        <ctrl>
+          <div class="form" style="padding-bottom: 50px; padding-top: 20px;">
+            <div class="row">
+              <br>
+              <div class="col-md-6 col-md-offset-3">
+                <div>
+                  <label class='controlLabel' for="slider1Input">Slider 1</label>
+                  <input type="text" id="NumberBoxVal1" value="0"> Hz</input>
+                  <input type="range" class="controlSlider" id="slider1Input" min="0" value="0" max="1" step="0.001">
+                </div>
+
+                <br>
+                <br>
+
+                <div>
+                  <label class='controlLabel' for="slider2Input">Slider 2</label>
+                  <input type="text" id="NumberBoxVal2" value="0"> Hz</input>
+                  <input type="range" class="controlSlider" id="slider2Input" min="0" value="0" max="5" step="0.001">
+                </div>
+
+                <br>
+                <br>
+
+                <div>
+                  <label class='controlLabel' for="slider3Input">Slider 3</label>
+                  <input type="text" id="NumberBoxVal3" value="0"> Hz</input>
+                  <input type="range" class="controlSlider" id="slider3Input" min="0" value="0" max="7" step="0.001">
+                </div>
+
+                <br>
+                <br>
+
+                <div>
+                  <label class='controlLabel' for="slider4Input">Slider 4</label>
+                  <input type="text" id="NumberBoxVal4" value="0"> Hz</input>
+                  <input type="range" class="controlSlider" id="slider4Input" min="0" value="0" max="10.5" step="0.001">
+                </div>
+
+                <br>
+                <br>
+
+                <br>
+                <br>
+
+                <div align="center">
+                  <button class="btn" id="buttonRandomise" align="center">Randomise</button>
+
+                  <br>
+                  <br>
+
+                </div>
+                <div align="center">
+                  <label class='controlLabel' for="selectParameterToRandomise">Ctrl-Cmd + Click to select parameters</label>
+                  <br>
+                  <select id="selectParameterToRandomise" size="4" style="width: 50%; float: center; margin-top: 0;" multiple>
+                    <option value="slider1" selected >Slider 1</option>
+                    <option value="slider2" selected >Slider 2</option>
+                    <option value="slider3" selected >Slider 3</option>
+                    <option value="slider4" selected >Slider 4</option>
+                  </select>
+                </div>
+
+                <br>
+                <br>
+
+                <div>
+                  <label class='controlLabel' for="sliderRandomPercentInput">Random Percentage</label>
+                  <input type="text" id="numberBoxRandomPercentInput" value="100"> %</input>
+                  <input type="range" class="controlSlider" id="sliderRandomPercentInput" min="0" value="100" max="100" step="1">
+                </div>
+              </div>
+            </div>
+          </div>
+        </ctrl>
+    </div>
+    <script type="text/javascript">
+      // Hide start button
+      $('#startButton').hide();
+      // Show start button
+      $('#loading').fadeOut(200, function() { $('#startButton').fadeIn() })
+
+      $('#startButton').click(function () {
+        $(this).fadeOut(200, function () {
+            $('.form').finish().fadeIn("slow");
+        })
+      })
+
+      slider1Input.oninput = function(){
+        console.log('Slider 1 ' + this.value);
+        updateTextInput('NumberBoxVal1', this.value);
+        oldValue(slider1Input);
+      };
+
+
+       slider2Input.oninput = function(){
+         console.log('Slider 2 ' + this.value);
+         updateTextInput('NumberBoxVal2', this.value);
+         oldValue(slider2Input);
+       };
+
+
+       slider3Input.oninput = function(){
+         console.log('Slider 3 ' + this.value);
+         updateTextInput('NumberBoxVal3', this.value);
+         oldValue(slider3Input);
+       };
+
+
+       slider4Input.oninput = function(){
+         console.log('Slider 4 ' + this.value);
+         updateTextInput('NumberBoxVal4', this.value);
+         oldValue(slider4Input);
+       };
+
+
+       sliderRandomPercentInput.oninput = function(){
+         console.log('Slider Random Percentage ' + this.value);
+         updateTextInput('numberBoxRandomPercentInput', this.value);
+       };
+
+       // get selected slider (see selector) and put them into an array
+       function selectedValuesMultiple (){
+         var multipleValues = $( "#selectParameterToRandomise" ).val() || [];
+         console.log('Selected Values - ' + multipleValues.join( ", " ));
+         return multipleValues;
+       }
+
+       // on the randomise button click check which sliders are selected and generate random value for each of them
+      buttonRandomise.onclick =  function(){
+        var multipleVals = selectedValuesMultiple();
+        console.log(multipleVals[0]);
+        for (var i=0, iLen=multipleVals.length; i<iLen; i++){
+          if (multipleVals[i] == "slider1"){
+            randomiseSlider(slider1Input);
+          } else if (multipleVals[i] == "slider2"){
+            randomiseSlider(slider2Input);
+          } else if (multipleVals[i] == "slider3"){
+            randomiseSlider(slider3Input);
+          } else if (multipleVals[i] == "slider4"){
+            randomiseSlider(slider4Input);
+          }
+        }
+      };
+
+      // create a new slider attribute 'lastinput' for keeping the last input value
+      function oldValue (elementId) {
+        elementId.setAttribute('lastinput', elementId.value);
+      };
+
+      // access to slider attribute 'lastinput' as reference for the random range (mid point)
+      function getOldValue (elementId) {
+        return elementId.getAttribute('lastinput');
+      };
+
+      // calculate the min-max random values in relation to (i) min-max slider range (ii) random percentage (in relation to the slider range) and (iii) last user input
+      // last user input is the mid point reference for the random range (random range= last input +- half random percentage)
+      function randomiseSlider (sliderId) {
+
+        var lastSliderValue = parseFloat(getOldValue(sliderId));
+        var sliderpercent = sliderRandomPercentInput.value;
+        var sliderMaxValue = sliderId.max;
+        var sliderMinValue = sliderId.min;
+        var sliderRange = sliderMaxValue - sliderMinValue;
+        var max = (sliderpercent*0.01*sliderRange*0.5) + lastSliderValue;
+        var min = lastSliderValue - (sliderpercent*0.01*sliderRange*0.5);
+        var rescaledMax = max + (Math.abs(sliderMinValue - min));
+        var rescaledMin = min - (Math.abs(max - sliderMaxValue));
+        // if random range < or > than slider min-max range, rescale min-max range to keep the percentage invariated (moving range)
+        if (min <= sliderMinValue){
+          max = rescaledMax;
+          min = sliderMinValue;
+        } else if (max >= sliderMaxValue){
+          max = sliderMaxValue;
+          min = rescaledMin;
+        }
+        // console.log('Slider Min ' + sliderMinValue);
+        // console.log('Slider Max ' + sliderMaxValue);
+        //  console.log('Randon Min ' + min);
+        //  console.log('Random Max ' + max);
+        //  console.log('Random Rescaled Max ' + rescaledMax);
+        //  console.log('Random Rescaled Min ' + rescaledMin);
+        // console.log('Slider Range ' + sliderRange);
+        // console.log('Last Slider Value ' + lastSliderValue);
+        // console.log('Percentage ' + sliderpercent);
+        sliderId.value = generateRandomValue (min, max);
+      };
+      // generate the random number within the calculated range
+      function generateRandomValue (minVal, maxVal) {
+        return Math.random() * (maxVal - minVal) + minVal;
+      };
+    </script>
+  </body>
+</html>
