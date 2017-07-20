@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/select.css">
 
-    <title>GUI Randomise Example</title>
+    <title>GUI Randomise Example 1</title>
   </head>
 
   <body>
@@ -52,8 +52,8 @@
               <br>
               <div class="col-md-6 col-md-offset-3">
                 <div>
-                  <label class='controlLabel' for="slider1Input">Slider 1</label>
-                  <input type="text" id="NumberBoxVal1" value="0"> Hz</input>
+                  <label class='controlLabel' for="slider1Input">Slider 1 &nbsp &nbsp</label>
+                  <input type="text" id="NumberBoxVal1" value="0"  style="width: 15%"></input>
                   <input type="range" class="controlSlider" id="slider1Input" min="0" value="0" max="1" step="0.001">
                 </div>
 
@@ -61,8 +61,8 @@
                 <br>
 
                 <div>
-                  <label class='controlLabel' for="slider2Input">Slider 2</label>
-                  <input type="text" id="NumberBoxVal2" value="0"> Hz</input>
+                  <label class='controlLabel' for="slider2Input">Slider 2 &nbsp &nbsp</label>
+                  <input type="text" id="NumberBoxVal2" value="0"  style="width: 15%"></input>
                   <input type="range" class="controlSlider" id="slider2Input" min="0" value="0" max="5" step="0.001">
                 </div>
 
@@ -70,8 +70,8 @@
                 <br>
 
                 <div>
-                  <label class='controlLabel' for="slider3Input">Slider 3</label>
-                  <input type="text" id="NumberBoxVal3" value="0"> Hz</input>
+                  <label class='controlLabel' for="slider3Input">Slider 3 &nbsp &nbsp</label>
+                  <input type="text" id="NumberBoxVal3" value="0"  style="width: 15%"></input>
                   <input type="range" class="controlSlider" id="slider3Input" min="0" value="0" max="7" step="0.001">
                 </div>
 
@@ -79,16 +79,14 @@
                 <br>
 
                 <div>
-                  <label class='controlLabel' for="slider4Input">Slider 4</label>
-                  <input type="text" id="NumberBoxVal4" value="0"> Hz</input>
+                  <label class='controlLabel' for="slider4Input">Slider 4 &nbsp &nbsp</label>
+                  <input type="text" id="NumberBoxVal4" value="0"  style="width: 15%"></input>
                   <input type="range" class="controlSlider" id="slider4Input" min="0" value="0" max="10.5" step="0.001">
                 </div>
 
                 <br>
-                <br>
 
-                <br>
-                <br>
+                <hr></hr>
 
                 <div align="center">
                   <button class="btn" id="buttonRandomise" align="center">Randomise</button>
@@ -98,7 +96,7 @@
 
                 </div>
                 <div align="center">
-                  <label class='controlLabel' for="selectParameterToRandomise">Ctrl-Cmd + Click to select parameters</label>
+                  <label class='controlLabel' for="selectParameterToRandomise">Ctrl-Cmd + Click to select sliders</label>
                   <br>
                   <select id="selectParameterToRandomise" size="4" style="width: 50%; float: center; margin-top: 0;" multiple>
                     <option value="slider1" selected >Slider 1</option>
@@ -111,11 +109,14 @@
                 <br>
                 <br>
 
-                <div>
-                  <label class='controlLabel' for="sliderRandomPercentInput">Random Percentage</label>
-                  <input type="text" id="numberBoxRandomPercentInput" value="100"> %</input>
+                <div align="center">
+                  <label class='controlLabel' for="sliderRandomPercentInput">Random Threshold as Slider Percentage &nbsp </label>
+                  <input type="text" id="numberBoxRandomPercentInput" value="100" style="width: 15%"> &nbsp % </input>
                   <input type="range" class="controlSlider" id="sliderRandomPercentInput" min="0" value="100" max="100" step="1">
                 </div>
+                <br>
+                <p align="center"> The percentage defines the threshold around the last sliders input. <br>
+                  The last sliders input is the median reference point for the random range.</p>
               </div>
             </div>
           </div>
@@ -133,12 +134,20 @@
         })
       })
 
+      onload = function(){
+        oldValue(slider1Input);
+        oldValue(slider2Input);
+        oldValue(slider3Input);
+        oldValue(slider4Input);
+
+      };
+
+
       slider1Input.oninput = function(){
         console.log('Slider 1 ' + this.value);
         updateTextInput('NumberBoxVal1', this.value);
         oldValue(slider1Input);
       };
-
 
        slider2Input.oninput = function(){
          console.log('Slider 2 ' + this.value);
